@@ -1,1 +1,551 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #26352a;
+    background: #f5f4ed;
+    line-height: 1.7;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* ================= HEADER ================= */
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 76px;
+    background: rgba(255, 255, 255, 0.96);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+    z-index: 1000;
+    box-shadow: 0 2px 20px rgba(0,0,0,.08);
+}
+
+.logo {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #244d2a;
+}
+
+.logo span:last-child {
+    color: #79a83b;
+}
+
+.menu {
+    display: flex;
+    gap: 22px;
+    align-items: center;
+}
+
+.menu a {
+    font-size: .82rem;
+    font-weight: 600;
+    color: #3f4c42;
+    transition: .3s;
+}
+
+.menu a:hover {
+    color: #6f9d38;
+}
+
+.menu-mobile {
+    display: none;
+    border: none;
+    background: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+
+/* ================= HERO ================= */
+
+.hero {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-image: url("assets/fundo-agro-sustentavel.jpeg");
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 38, 21, .65);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 850px;
+    margin-left: 8%;
+    padding: 120px 30px 80px 0;
+}
+
+.tag,
+.section-label {
+    color: #8eb94c;
+    font-size: .78rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.hero h1 {
+    font-size: clamp(3rem, 7vw, 6.5rem);
+    line-height: 1.02;
+    margin: 25px 0;
+}
+
+.hero h1 strong {
+    display: block;
+    color: #b8d87c;
+}
+
+.hero p {
+    max-width: 720px;
+    font-size: 1.15rem;
+    color: #f0f4ed;
+    margin-bottom: 35px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 25px;
+    background: #83ad45;
+    color: white;
+    font-weight: 700;
+    border-radius: 3px;
+    transition: .3s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+
+/* ================= TEXTOS ================= */
+
+.texto-section {
+    padding: 110px 10%;
+}
+
+.texto-container {
+    max-width: 1000px;
+    margin: 30px auto 0;
+}
+
+.texto-container h2,
+.texto-conteudo h2,
+.calculadora-intro h2,
+.fontes-intro h2 {
+    font-size: clamp(2.3rem, 4vw, 4rem);
+    line-height: 1.15;
+    margin-bottom: 30px;
+    color: #23452b;
+}
+
+.texto-container h2 span,
+.texto-conteudo h2 strong,
+.calculadora-intro h2 strong,
+.fontes-intro h2 strong {
+    color: #78a63d;
+}
+
+.texto-container p {
+    font-size: 1.08rem;
+    margin-bottom: 22px;
+    color: #536057;
+}
+
+
+/* ================= DESTAQUE ================= */
+
+.destaque {
+    background: #244d2a;
+    color: white;
+    padding: 100px 10%;
+}
+
+.destaque-content {
+    max-width: 900px;
+}
+
+.destaque span {
+    color: #a8c969;
+    font-size: .8rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.destaque h2 {
+    font-size: clamp(2rem, 4vw, 4rem);
+    line-height: 1.15;
+    margin: 20px 0;
+}
+
+.destaque p {
+    color: #dce8dc;
+    font-size: 1.1rem;
+    max-width: 700px;
+}
+
+
+/* ================= CONTEÚDO ================= */
+
+.conteudo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 650px;
+    background: #fff;
+}
+
+.conteudo-invertido .imagem-conteudo {
+    order: 2;
+}
+
+.imagem-conteudo {
+    overflow: hidden;
+}
+
+.imagem-conteudo img {
+    height: 100%;
+    min-height: 600px;
+    object-fit: cover;
+    transition: transform .7s;
+}
+
+.imagem-conteudo:hover img {
+    transform: scale(1.04);
+}
+
+.texto-conteudo {
+    padding: 90px 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.texto-conteudo p {
+    color: #58625b;
+    font-size: 1.04rem;
+    margin-bottom: 22px;
+}
+
+
+/* ================= CALCULADORA ================= */
+
+.calculadora-section {
+    padding: 110px 8%;
+    background: #e8eadc;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.calculadora-intro p {
+    color: #536057;
+    font-size: 1.05rem;
+    margin-bottom: 22px;
+    max-width: 650px;
+}
+
+.calculadora {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 15px 45px rgba(34, 58, 38, .12);
+}
+
+.campo {
+    margin-bottom: 22px;
+}
+
+.campo label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #304435;
+}
+
+.campo input {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ccd4c6;
+    border-radius: 5px;
+    font-size: 1rem;
+    outline: none;
+}
+
+.campo input:focus {
+    border-color: #7fa846;
+}
+
+.btn-calcular {
+    width: 100%;
+    padding: 16px;
+    border: none;
+    background: #315f37;
+    color: white;
+    font-weight: 800;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: .95rem;
+}
+
+.btn-calcular:hover {
+    background: #234b2a;
+}
+
+.resultado-calculadora {
+    margin-top: 25px;
+    padding: 20px;
+    background: #edf3e7;
+    border-radius: 7px;
+    color: #304b34;
+}
+
+.resultado-calculadora strong {
+    color: #58852b;
+}
+
+
+/* ================= REFLEXÃO ================= */
+
+.reflexao {
+    padding: 120px 10%;
+    background: #315f37;
+    color: white;
+}
+
+.reflexao > div {
+    max-width: 950px;
+}
+
+.reflexao span {
+    color: #b8d87c;
+    font-size: .8rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.reflexao h2 {
+    font-size: clamp(2.4rem, 5vw, 5rem);
+    line-height: 1.1;
+    margin: 20px 0 30px;
+}
+
+.reflexao p {
+    max-width: 800px;
+    color: #e3ebdf;
+    font-size: 1.08rem;
+    margin-bottom: 18px;
+}
+
+
+/* ================= FONTES ================= */
+
+.fontes {
+    padding: 110px 10%;
+    background: #fff;
+}
+
+.fontes-intro {
+    max-width: 850px;
+    margin-bottom: 60px;
+}
+
+.fontes-intro p {
+    color: #59635c;
+    font-size: 1.05rem;
+}
+
+.fontes-lista {
+    max-width: 1000px;
+}
+
+.fontes-lista article {
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    gap: 25px;
+    padding: 35px 0;
+    border-bottom: 1px solid #dce2d8;
+}
+
+.fontes-lista article > span {
+    font-size: 1.4rem;
+    color: #80a83c;
+    font-weight: 800;
+}
+
+.fontes-lista h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #28472e;
+}
+
+.fontes-lista p {
+    color: #59635c;
+    margin-bottom: 12px;
+}
+
+.fontes-lista a {
+    color: #67972f;
+    font-weight: 700;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+    padding: 60px 10%;
+    background: #17291b;
+    color: white;
+}
+
+.footer-logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+footer p {
+    color: #cbd7cb;
+    max-width: 600px;
+    margin-bottom: 25px;
+}
+
+footer small {
+    color: #91a092;
+}
+
+
+/* ================= RESPONSIVO ================= */
+
+@media (max-width: 1100px) {
+
+    .menu {
+        gap: 12px;
+    }
+
+    .menu a {
+        font-size: .72rem;
+    }
+
+    .hero-content {
+        margin-left: 5%;
+    }
+}
+
+
+@media (max-width: 850px) {
+
+    .header {
+        height: 65px;
+    }
+
+    .menu {
+        position: absolute;
+        top: 65px;
+        left: 0;
+        width: 100%;
+        background: white;
+        display: none;
+        flex-direction: column;
+        padding: 25px;
+    }
+
+    .menu.aberto {
+        display: flex;
+    }
+
+    .menu-mobile {
+        display: block;
+    }
+
+    .hero-content {
+        margin-left: 0;
+        padding: 120px 8% 70px;
+    }
+
+    .hero h1 {
+        font-size: 3.2rem;
+    }
+
+    .conteudo {
+        grid-template-columns: 1fr;
+    }
+
+    .conteudo-invertido .imagem-conteudo {
+        order: initial;
+    }
+
+    .imagem-conteudo img {
+        min-height: 350px;
+        height: 350px;
+    }
+
+    .texto-conteudo {
+        padding: 70px 8%;
+    }
+
+    .calculadora-section {
+        grid-template-columns: 1fr;
+        padding: 80px 7%;
+    }
+}
+
+
+@media (max-width: 550px) {
+
+    .hero h1 {
+        font-size: 2.7rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .texto-section,
+    .fontes {
+        padding: 75px 7%;
+    }
+
+    .destaque,
+    .reflexao {
+        padding: 80px 7%;
+    }
+
+    .calculadora {
+        padding: 25px;
+    }
+
+    .fontes-lista article {
+        grid-template-columns: 45px 1fr;
+        gap: 12px;
+    }
+}
